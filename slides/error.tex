@@ -1,0 +1,47 @@
+\begin{frame}{Error de Taylor}
+
+    \begin{multicols}{2}
+    
+        \begin{figure}
+            \centering
+            \begin{tikzpicture}
+                \begin{axis}[x=2.5cm, y=2.5cm,
+                axis lines=middle,
+                axis x line shift=0,
+                xlabel=\(x\),ylabel=\(y\),
+                x label style={anchor=north},
+                y label style={anchor=east},
+                xmin=-0.25,xmax=1.75,ymin=-0.25,ymax=1.75,
+                xtick={1.25},
+                xticklabels={$x_0$},
+                ytick={-1},
+                clip=false,smooth,
+                samples = 100]
+        
+                    \addplot[beamerorange, thick, domain = -0.13:1.5]{sin(\x r)};
+                    \draw[dashed, beamergreen] (-0.13,-0.13) -- (1.5,1.5);
+                    \path (1.25,0.94898461) edge node[right] {$\varepsilon$} (1.25,1.25);
+                    
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+        
+
+  
+    %\begin{block}{Teorema del Error}
+  
+    Sea $f(x)$ una función $n + 1$ veces derivable en $]a, b[$
+    y $x_0 \in]a, b[$. Si $P_n(x)$ es el polinomio de
+    Taylor de $f (x)$ en el punto $x_0$, entonces para cada $x \in]a, b[$
+    existe $\xi_x \in]a, b[$ tal que   
+  
+    \begin{equation*}
+        f(x) - P_n (x) = \frac{f^{(n+1)} (\xi_x)}{(n + 1)!} (x - x_0)^{n+1}
+        \label{taylor}
+    \end{equation*}
+  
+    %\end{block}
+  
+\end{multicols}
+  
+\end{frame}
