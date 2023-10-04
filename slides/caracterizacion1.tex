@@ -1,3 +1,43 @@
 \begin{frame}
-    Esto es un ejemplo.
+    %\begin{proposition}
+    Si $f(x)$ es $n+1$ veces derivable en un entorno de $x_0$,
+    el polinomio de Taylor de $f(x)$ en $x_0$ es el único
+    polinomio $P_n(x)$ de grau $n$ que cumple
+    \\
+    $\lim_{x \rightarrow x_0} \frac{f(x)-P_n(x)}{(x-x_0)^n}=0$.
+    %\end{proposition}
+\end{frame}
+
+\begin{frame}{Ejemplo}
+Vamos a ver que $P_(x)= \Sigma^{n}_{k=0} \frac{x^k}{k!}$ es el polinomio
+de Taylor de $f(x)=e^x$ amb $x_0=0$.
+
+$$\lim_{x \rightarrow 0} \frac{e^x-P_n(x)}{x^n}=^{L'Hôpital}
+\lim_{x \rightarrow 0} \frac{e^x-P_{n-1}(x)}{nx^{n-1}}=^{L'Hôpital} \dots =^{L'Hôpital}
+\lim_{x \rightarrow 0} \frac{e^x-1}{n!}=0$$
+
+Por la caracterización anterior ya lo tenemos
+
+    
+\end{frame}
+
+\begin{frame}{title}
+    Si $f(x)$ es $n+1$ veces derivable alrededor del punto $x_0$, el polinomio de Taylor de grado $n$ a $x_0$ es el único polinomio $P_n(x)$ que verifica una desigualdad del tipo
+    \\
+    $$|f(x)-P_n(x)| \leq M|x-x_0|^{n+1}$$
+    com $M > 0$, en un entorno del punto $x_0$.
+\end{frame}
+
+\begin{frame}
+
+    Vamos a ver que $P_n(x)= 1 - x^2 + x^4 - x^6 \dots + (-1)^nx^{2n}$ es polinomio de Taylor de
+    $f(x)= \frac{1}{1+x^2}$ en $x_0=0$.
+
+    $$|\frac{1}{1+x^2}-(1 - x^2 + x^4 - x^6 \dots + (-1)^nx^{2n})|
+    =|\frac{1-1-x^2+x^2+x^4-x^4 \dots (-1)^{n+1}x^{2n+2}}{1+x^2}|=|\frac{(-1)^{n+1}x^{2n+2}}{1+x^2}|$$
+    Si $|x|< \frac{1}{2}$:
+    $$|\frac{x^{2n+2}}{1+x^2}|\leq |\frac{x^{n+1}}{1+x^2}| \leq 2|x^{n+1}| $$
+
+    Esta desigualdad nos garantiza que $P_n(x)$
+    es una caracterización
 \end{frame}
