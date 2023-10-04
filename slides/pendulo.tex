@@ -1,0 +1,76 @@
+\begin{frame}{El problema del péndulo}
+  \begin{center}
+    \begin{tikzpicture}[
+      scale=1.4,
+      transform shape,
+      every node/.style={font=\tiny},
+    ]
+      \begin{scope}[yshift=5.25cm]
+        \draw[
+          pattern=north east lines,
+          pattern color=TolDarkBlue,
+        ] (-2.5,-0.25) rectangle (2.5,0.25);
+      \end{scope}
+  
+      \begin{scope}[yshift=5cm]
+        \draw[dashed, ultra thin] 
+          (0,-2.15) -- (2,-2.15);
+  
+        \draw[dotted, thick, draw=TolLightGreen] 
+          (-120:2.15) arc (-120:-60:2.15);
+  
+        \draw (0,0) -- (-60:2)
+          node[midway, right] {$R$};
+        \draw[fill=TolLightGreen] 
+          (-60:2.15) circle (0.15);
+  
+        \draw[dashed, thin] (0,0) -- (-90:2.15);
+  
+        \draw[->, draw=TolLightBrown] 
+          (-90:0.5) arc (-90:-60:0.5)
+          node[midway, below, ] {$\theta$};
+  
+        \begin{scope}[xshift=0.25cm]
+          \draw[|-|]
+            (-60:2.15) -- (-60:2.15 |- -2.15,-2.15)
+            node[midway,right] {$h$};
+        \end{scope}
+      \end{scope}
+    \end{tikzpicture}
+  \end{center}
+
+  \vfill
+
+  \begin{center}
+    \begin{tikzpicture}[
+      scale=0.9,
+      transform shape,
+      every node/.style={
+        font=\small,
+      },
+    ]
+      \begin{scope}[
+        every node/.style={
+          minimum height=1.1cm,
+          rectangle,
+        },
+      ]
+        \node[fill=TolLightRed!20!white]
+          (exacta) at (0,0) {
+          $h = R(1 - \cos \theta)$
+        };
+
+        \node[fill=TolLightGreen!20!white] 
+          (aprox) [right=4cm of exacta] {
+          $h \approx R \dfrac{\theta^2}{2}$
+        };
+      \end{scope}
+
+      \draw[decorate, decoration={snake, amplitude=0.4mm}, <->] 
+        (exacta) -- (aprox)
+        node[midway, below, yshift=-0.3cm] {
+          $\cos \theta \approx 1 - \dfrac{\theta^2}{2}$
+        };
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
