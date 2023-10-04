@@ -1,9 +1,10 @@
-\documentclass[11pt]{beamer}
+\documentclass{beamer}
 
 \usepackage[spanish]{babel}
 
 \usetheme[
   progressbar=frametitle,
+  block=fill,
 ]{metropolis}
 \usefonttheme[onlymath]{serif}
 
@@ -14,6 +15,8 @@
 
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
+
+\usepackage{multicol}
 
 \title{El polinomio de Taylor}
 \subtitle{Una introducción a la aproximación de funciones}
@@ -39,10 +42,14 @@
     \input{slides/aproximacion_pendulo.tex}
 
   \section{El polinomio de Taylor}
-
+    \input{slides/pol_taylor.tex}
+    \input{slides/forma_natural.tex}
+    
   \section{El error de aproximación}
+    \input{slides/error.tex}
 
   \section{Caracterización de los polinomios de Taylor}
 
   \section*{Conclusiones}
+
 \end{document}
