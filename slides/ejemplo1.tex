@@ -1,12 +1,19 @@
-\begin{frame}{Ejemplo}
-  Vamos a ver que $P_(x)= \Sigma^{n}_{k=0} \frac{x^k}{k!}$ es el polinomio
-  de Taylor de $f(x)=e^x$ amb $x_0=0$.
-  
-  $$\lim_{x \rightarrow 0} \frac{e^x-P_n(x)}{x^n}\underset{L'Hôpital}{=}
-  \lim_{x \rightarrow 0} \frac{e^x-P_{n-1}(x)}{nx^{n-1}}\underset{L'Hôpital}{=} \dots \underset{L'Hôpital}{=}$$
-  \\
-  $$\lim_{x \rightarrow 0} \frac{e^x-1}{n!}=0$$ 
-  \\
-  
-  Por la caracterización anterior ya lo tenemos      
+\begin{frame}{La función exponencial}
+  Es habitual presentar $e$ como la serie
+  \[
+    e = \sum_{n=0}^\infty \frac{1}{n!}.
+  \]
+
+  Se debe a que el polinomio de Taylor de la exponencial es
+  \[
+    P_n(x) = \sum_{k=0}^n \frac{x^k}{k!}.
+  \]
+
+  Usando la caracterización anterior y la regla de L'Hôpital comprobamos
+  que
+  \[
+    \lim_{x \to 0} \frac{e^x - P_n(x)}{x^n}
+    = \frac{e^x - \sum_{k = 0}^{n - 1} \frac{x^k}{k!}}{nx^{n - 1}}
+    = \ldots = 1.
+  \]
 \end{frame}
