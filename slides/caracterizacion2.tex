@@ -1,6 +1,17 @@
 \begin{frame}{Segunda caracterización}
-  Si $f(x)$ es $n+1$ veces derivable alrededor del punto $x_0$, el polinomio de Taylor de grado $n$ a $x_0$ es el único polinomio $P_n(x)$ que verifica una desigualdad del tipo
-  \\
-  $$|f(x)-P_n(x)| \leq M|x-x_0|^{n+1}$$
-  com $M > 0$, en un entorno del punto $x_0$.
+  \begin{exampleblock}{Segunda caracterización del polinomio de Taylor}
+    Sea $f$ una función $n$ veces derivable en un entorno de $a$. El
+    polinomio de Taylor de $f$ en $x_0$ de grado $n$ es el único polinomio
+    $P_n(x)$ tal que
+    \[
+      \left\lvert f(x) - P_n(x) \right\rvert
+      \le M \left\lvert x - x_0 \right\rvert^{n + 1},
+    \]
+    en un entorno de $x_0$, con $M > 0$.
+  \end{exampleblock}
+
+  Esta desigualdad nos recuerda la continuidad de Lipschitz. Análogamente a
+  la otra caracterización, esta nos muestra que el polinomio de Taylor es
+  el único polinomio que se aproxima tanto como queramos al comportamiento
+  de $f$.
 \end{frame}

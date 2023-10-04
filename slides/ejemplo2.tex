@@ -1,12 +1,21 @@
 \begin{frame}{Ejemplo}
-  Vamos a ver que $P_n(x)= 1 - x^2 + x^4 - x^6 \dots + (-1)^nx^{2n}$ es polinomio de Taylor de
-  $f(x)= \frac{1}{1+x^2}$ en $x_0=0$.
+  Las funciones generatrices son funciones muy útiles usadas en
+  combinatoria, probabilidad y otros.
 
-  $$|\frac{1}{1+x^2}-(1 - x^2 + x^4 - x^6 \dots + (-1)^nx^{2n})|
-  =$$$$|\frac{1-1-x^2+x^2+x^4-x^4 \dots (-1)^{n+1}x^{2n+2}}{1+x^2}|=|\frac{(-1)^{n+1}x^{2n+2}}{1+x^2}|$$
-  Si $|x|< \frac{1}{2}$:
-  $$|\frac{x^{2n+2}}{1+x^2}|\leq |\frac{x^{n+1}}{1+x^2}| \leq 2|x^{n+1}| $$
+  Una de tantas funciones generatrices útiles es
+  \[
+    f(x) = 1 - x^2 + x^4 - x^6 + \cdots,
+  \]
+  que resulta ser el polinomio de Taylor en $0$ (y esto es muy útil) de
+  \[
+    g(x) = \frac{1}{1 + x^2}.
+  \]
 
-  Esta desigualdad nos garantiza que $P_n(x)$
-  es una caracterización
+  Usando la segunda caracterización, si $\lvert x \rvert < \frac{1}{2}$ y
+  $M = 2$,
+  \[
+    \lvert f(x) - g(x) \rvert 
+    \leq \left\lvert \frac{x^{n + 1}}{1 + x^2} \right\rvert
+    \leq 2 \lvert x \rvert^{n + 1}.
+  \]
 \end{frame}
