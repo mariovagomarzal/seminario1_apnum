@@ -14,7 +14,34 @@
   \end{block}
 
   \begin{multicols}{2}
-    \input{slides/images/taylorNatural_graph.tex}
+    \begin{tikzpicture}[scale=0.6, transform shape]
+      \begin{axis}[
+        mlineplot,
+        no markers,
+        axis lines=center,
+        legend pos=south east,
+        trig format=rad,
+        ]
+        \addplot+[
+          domain=-pi:pi,
+          samples=100,
+        ] {sin(x)};
+          \addlegendentry{$\sen(x)$}
+    
+        \addplot+[
+          domain=-pi:pi,
+          samples=100,
+        ] {x - x*x*x/6};
+          \addlegendentry{$P_3(x)$}
+    
+        \addplot+[
+            domain=-pi:pi,
+            samples=100,
+          ] {x - x*x*x/6 + x*x*x*x*x/120};
+            \addlegendentry{$P_6(x)$}
+         
+      \end{axis}
+    \end{tikzpicture}
   \columnbreak
   \begin{itemize}
     \item $P_1(x) = x$
