@@ -1,0 +1,55 @@
+\begin{frame}{Acotación del error}
+  \begin{multicols}{2}
+    El polinomio de Taylor de orden $1$ de $\sen x$ en $x_0 = 0$ es $P_1(x) =
+    x$. Usando la forma del error de lagrange y el hecho de que
+    \[
+      \lvert \sen x \rvert \leq 1 \quad \forall x \in \mathbb{R},
+    \]
+    podemos acotar el error de manera que
+    \[
+      \left\lvert \sen x - x \right\rvert 
+      \leq \frac{x^2}{2}.
+    \]
+
+    \columnbreak
+
+    \begin{center}
+      \begin{tikzpicture}[scale=0.6, transform shape]
+        \begin{axis}[
+          mlineplot,
+          no markers,
+          axis lines=center,
+          legend pos=south east,
+          trig format=rad,
+        ]
+          \addplot+[
+            domain=-pi:pi,
+            samples=100,
+          ] {sin(x)};
+            \addlegendentry{$\sen(x)$}
+      
+          \addplot+[
+            domain=-2:2,
+          ] {x};
+            \addlegendentry{$x$}
+          
+          \def\errorx{pi/2}
+          \node (val_real) at 
+            (axis cs: \errorx, {sin(\errorx)}) {};
+          \node (val_aprox) at 
+            (axis cs: \errorx, \errorx) {};
+          \draw[
+            dashed,
+            thin,
+            draw=TolDarkRed,
+            ->,
+          ] (val_aprox.center) -- (val_real.center)
+            node[midway, right] 
+            {$\lvert \epsilon \rvert < \frac{\pi^2}{8}$};
+        \end{axis}
+      \end{tikzpicture}
+    \end{center}
+
+    Podemos acotar el error en puntos concretos de la función, como $x = \frac{\pi}{2}$.
+  \end{multicols}
+\end{frame}
