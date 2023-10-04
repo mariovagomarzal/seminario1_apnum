@@ -1,0 +1,42 @@
+\begin{frame}{¿Es una buena aproximación?}
+  \begin{minipage}{0.35\textwidth}
+    \begin{tikzpicture}[scale=0.5, transform shape]
+      \begin{axis}[
+        mlineplot,
+        no markers,
+        axis lines=center,
+        trig format=rad,
+        thick,
+      ]
+        \addplot+[
+          domain=-pi:pi,
+          samples=100,
+        ] {cos(x)};
+          \addlegendentry{$\cos \theta$}
+      \end{axis}
+    \end{tikzpicture}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}{0.35\textwidth}
+    \begin{tikzpicture}[scale=0.5, transform shape]
+      \begin{axis}[
+        mlineplot,
+        no markers,
+        axis lines=center,
+        trig format=rad,
+        thick,
+      ]
+        \addplot+[
+          domain=-pi:pi,
+          samples=100,
+        ] {cos(x)};
+          \addlegendentry{$\cos \theta$}
+  
+        \addplot+[
+          domain=-2:2,
+        ] {1 - x^2/2};
+          \addlegendentry{$1 - \frac{\theta^2}{2}$}
+      \end{axis}
+    \end{tikzpicture}
+  \end{minipage}
+\end{frame}
