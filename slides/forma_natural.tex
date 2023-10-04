@@ -1,0 +1,27 @@
+\begin{frame}{Forma natural}
+  \begin{block}{Forma natural}
+
+    El polinomio de Taylor centrado en $x_0$ de grado $n$ se pude 
+    escribir de la manera siguiente:
+      
+    \begin{center}
+      \begin{tikzpicture}
+        \node[rectangle, fill=TolLightBlue!20!white] {
+          $\displaystyle P_n(x) = \sum_{i=0}^n \frac{f^{(i)}(x_0)}{n!} (x-x_0)^i$
+          };
+        \end{tikzpicture}
+    \end{center}
+  \end{block}
+
+  \begin{multicols}{2}
+    \input{slides/images/taylorNatural_graph.tex}
+  \columnbreak
+  \begin{itemize}
+    \item $P_1(x) = x$
+    \item $P_3(x) = x-\frac{x^3}{6}$
+    \item $P_5(x) = x - \frac{x^3}{6} + \frac{x^5}{120}$
+  \end{itemize}
+\end{multicols}
+        
+
+\end{frame}
