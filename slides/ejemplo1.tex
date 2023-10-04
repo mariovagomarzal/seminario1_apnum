@@ -1,0 +1,19 @@
+\begin{frame}{La función exponencial}
+  Es habitual presentar $e$ como la serie
+  \[
+    e = \sum_{n=0}^\infty \frac{1}{n!}.
+  \]
+
+  Se debe a que el polinomio de Taylor de la exponencial es
+  \[
+    P_n(x) = \sum_{k=0}^n \frac{x^k}{k!}.
+  \]
+
+  Usando la caracterización anterior y la regla de L'Hôpital comprobamos
+  que
+  \[
+    \lim_{x \to 0} \frac{e^x - P_n(x)}{x^n}
+    = \frac{e^x - \sum_{k = 0}^{n - 1} \frac{x^k}{k!}}{nx^{n - 1}}
+    = \ldots = 1.
+  \]
+\end{frame}

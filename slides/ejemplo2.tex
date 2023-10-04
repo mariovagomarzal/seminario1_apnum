@@ -1,0 +1,21 @@
+\begin{frame}{Ejemplo}
+  Las funciones generatrices son funciones muy útiles usadas en
+  combinatoria, probabilidad y otros.
+
+  Una de tantas funciones generatrices útiles es
+  \[
+    f(x) = 1 - x^2 + x^4 - x^6 + \cdots,
+  \]
+  que resulta ser el polinomio de Taylor en $0$ (y esto es muy útil) de
+  \[
+    g(x) = \frac{1}{1 + x^2}.
+  \]
+
+  Usando la segunda caracterización, si $\lvert x \rvert < \frac{1}{2}$ y
+  $M = 2$,
+  \[
+    \lvert f(x) - g(x) \rvert 
+    \leq \left\lvert \frac{x^{n + 1}}{1 + x^2} \right\rvert
+    \leq 2 \lvert x \rvert^{n + 1}.
+  \]
+\end{frame}
