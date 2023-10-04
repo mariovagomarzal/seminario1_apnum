@@ -1,54 +1,61 @@
-\begin{frame}{Forma natural}
-  \begin{block}{Forma natural}
-
-    El polinomio de Taylor centrado en $x_0$ de grado $n$ se pude 
-    escribir de la manera siguiente:
-      
-    \begin{center}
-      \begin{tikzpicture}
-        \node[rectangle, fill=TolLightBlue!20!white] {
-          $\displaystyle P_n(x) = \sum_{i=0}^n \frac{f^{(i)}(x_0)}{n!} (x-x_0)^i$
-          };
-        \end{tikzpicture}
-    \end{center}
-  \end{block}
+\begin{frame}{Forma natural del polinomio de Taylor}
+  Si tomamos la base natural de $\Pi_n$, obtenemos la forma natural del
+  polinomio de Taylor:
+    
+  \begin{center}
+    \begin{tikzpicture}
+      \node[rectangle, fill=TolLightBlue!20!white] {
+        $\displaystyle P_n(x) = 
+        \sum_{i=0}^n \frac{f^{(i)}(x_0)}{n!} (x-x_0)^i$
+      };
+      \end{tikzpicture}
+  \end{center}
 
   \begin{multicols}{2}
-    \begin{tikzpicture}[scale=0.6, transform shape]
-      \begin{axis}[
-        mlineplot,
-        no markers,
-        axis lines=center,
-        legend pos=south east,
-        trig format=rad,
+    Tomando $f(x) = \sen x$ y $x_0 = 0$, tenemos que
+    \begin{itemize}
+      \item $P_1(x) = x$,
+      \item $P_3(x) = x-\frac{x^3}{6}$,
+      \item y $P_5(x) = x - \frac{x^3}{6} + \frac{x^5}{120}$.
+    \end{itemize}
+
+    \columnbreak
+
+    \begin{center}
+      \begin{tikzpicture}[scale=0.6, transform shape]
+        \begin{axis}[
+          mlineplot,
+          no markers,
+          axis lines=center,
+          legend pos=south east,
+          trig format=rad,
+          thick,
         ]
-        \addplot+[
-          domain=-pi:pi,
-          samples=100,
-        ] {sin(x)};
-          \addlegendentry{$\sen(x)$}
-    
-        \addplot+[
-          domain=-pi:pi,
-          samples=100,
-        ] {x - x*x*x/6};
-          \addlegendentry{$P_3(x)$}
-    
-        \addplot+[
+          \addplot+[
             domain=-pi:pi,
             samples=100,
-          ] {x - x*x*x/6 + x*x*x*x*x/120};
-            \addlegendentry{$P_6(x)$}
-         
-      \end{axis}
-    \end{tikzpicture}
-  \columnbreak
-  \begin{itemize}
-    \item $P_1(x) = x$
-    \item $P_3(x) = x-\frac{x^3}{6}$
-    \item $P_5(x) = x - \frac{x^3}{6} + \frac{x^5}{120}$
-  \end{itemize}
-\end{multicols}
-        
-
+          ] {sin(x)};
+            \addlegendentry{$\sen(x)$}
+  
+          \addplot+[
+              domain=-pi:pi,
+              samples=100,
+            ] {x};
+              \addlegendentry{$P_1(x)$}
+      
+          \addplot+[
+            domain=-pi:pi,
+            samples=100,
+          ] {x - x^3/6};
+            \addlegendentry{$P_3(x)$}
+      
+          \addplot+[
+            domain=-pi:pi,
+            samples=100,
+          ] {x - x^3/6 + x^5/120};
+            \addlegendentry{$P_5(x)$}
+        \end{axis}
+      \end{tikzpicture}
+    \end{center}
+  \end{multicols}
 \end{frame}

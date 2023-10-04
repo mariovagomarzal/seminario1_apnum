@@ -1,17 +1,14 @@
 \begin{frame}{Polinomio de Taylor}
-
-    \begin{block}{Problema de aproximación}
-    
-    Sea $f (x)$ una función $n$ veces derivable en un intervalo
-    $[a, b]$. Queremos calcular $P_n(x) \in \Pi_n$, un polinomio
-    que verifique
-     
-    $$P_n^{(k)}(x_0) = f^{(k)}(x_0), \quad k = 0, 1, \dots , n$$
-    donde $x_0$ es un punto fijado del intervalo $]a, b[$.
-    \end{block}
-    
-    \begin{block}{Teorema}
-      El problema de aproximación tiene solución y es única.
-    \end{block}
-    
+  \begin{alertblock}{Problema de aproximación de Taylor}
+    Dada una función $f: [a, b] \to \mathbb{R}$ que es derivable $n$ veces en
+    $x_0 \in ]a, b[$, se trata de encontrar un polinomio $P_n(x)$ de grado
+    menor o igual que $n$ tal que
+    \[
+      P_n^{(k)}(x_0) = f^{(k)}(x_0), \quad k = 0, 1, \dots , n.
+    \]
+  \end{alertblock}
+  
+  \begin{exampleblock}{Solución del problema de aproximación de Taylor}
+    El problema de aproximación de Taylor tiene solución y es única.
+  \end{exampleblock}
 \end{frame}
