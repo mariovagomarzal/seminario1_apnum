@@ -1,4 +1,4 @@
-\documentclass[11pt]{beamer}
+\documentclass{beamer}
 
 \usepackage[spanish]{babel}
 
@@ -7,6 +7,16 @@
   block=fill,
 ]{metropolis}
 \usefonttheme[onlymath]{serif}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations}
+\usetikzlibrary{patterns}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\usepackage{multicol}
 
 \title{El polinomio de Taylor}
 \subtitle{Una introducción a la aproximación de funciones}
@@ -28,10 +38,15 @@
   \end{frame}
 
   \section{El problema del péndulo}
+    \input{slides/pendulo.tex}
+    \input{slides/aproximacion_pendulo.tex}
 
   \section{El polinomio de Taylor}
-
+    \input{slides/pol_taylor.tex}
+    \input{slides/forma_natural.tex}
+    
   \section{El error de aproximación}
+    \input{slides/error.tex}
 
   \section{Caracterización de los polinomios de Taylor}
     \input{slides/caracterizacion1.tex}
@@ -40,4 +55,5 @@
     \input{slides/ejemplo2.tex}
 
   \section*{Conclusiones}
+
 \end{document}

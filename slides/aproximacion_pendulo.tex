@@ -1,0 +1,70 @@
+\begin{frame}{La aproximación del péndulo}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.55, transform shape]
+      \node (coseno) {
+        \begin{tikzpicture}
+          \begin{axis}[
+            mlineplot,
+            no markers,
+            axis lines=center,
+            trig format=rad,
+            thick,
+          ]
+            \addplot+[
+              domain=-pi:pi,
+              samples=100,
+            ] {cos(x)};
+              \addlegendentry{$\cos \theta$}
+          \end{axis}
+        \end{tikzpicture}
+      };
+      
+      \node (taylor) [right=4cm of coseno] {
+        \begin{tikzpicture}
+          \begin{axis}[
+            mlineplot,
+            no markers,
+            axis lines=center,
+            trig format=rad,
+            thick,
+          ]
+            \addplot+[
+              domain=-pi:pi,
+              samples=100,
+              dashed,
+              thin,
+            ] {cos(x)};
+              \addlegendentry{$\cos \theta$}
+      
+            \addplot+[
+              domain=-2:2,
+            ] {1 - x^2/2};
+              \addlegendentry{$1 - \frac{\theta^2}{2}$}
+          \end{axis}
+        \end{tikzpicture}
+      };
+  
+      \draw[
+        decorate,
+        decoration={snake, amplitude=0.4mm}, 
+        <->,
+      ]
+        (coseno.east) -- (taylor.west)
+        node [midway, below, yshift=-0.25cm] 
+        {$\cos \theta \approx 1 - \dfrac{\theta^2}{2}$};
+    \end{tikzpicture}
+  \end{center}
+
+  \vfill
+
+  \begin{center}
+    \begin{tikzpicture}
+      \node[rectangle, fill=TolLightBlue!20!white] {
+        $\displaystyle
+        \cos \theta \approx
+        1 - \frac{\theta^2}{2} + \frac{\theta^4}{4!}
+        - \frac{\theta^6}{6!} + \cdots$
+      };
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
